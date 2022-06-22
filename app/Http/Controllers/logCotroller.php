@@ -16,6 +16,10 @@ class logCotroller extends Controller
             'password' => 'required'
 
         ]);
+        if (auth()->attempt($request->only('email','password'))){
+            return redirect()->route('dashboard');
+        }
+        return redirect()->back()->withErrors('biby');
 
 
 
@@ -25,6 +29,6 @@ class logCotroller extends Controller
     }
     public function dashboard(){
 
-        return views('dashboard');
+        return view('dashboard');
     }
 }
