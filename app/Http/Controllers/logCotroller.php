@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 class logCotroller extends Controller
 {
     public function login(){
-        return veiws('login');
+        return view('login');
     }
-    public function auth(){
+    public function auth(Request $request){
+        //validation des requete de type mail
+        $request-> validate([
+            'email' => 'required|email',
+            'password' => 'required'
+
+        ]);
+
+
 
     }
     public function logout(){

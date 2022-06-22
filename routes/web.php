@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 /**Methode login */
-Route::get('/log', [logCotroller::class, 'log'])->name('login');
-Route::post('/auth', [logCotroller::class, 'auth'])->name('auth');
-Route::get('/logout', [logCotroller::class, 'logout'])->name('auth');
+Route::get('/login', [logCotroller::class, 'login'])->name('login');
+Route::get('/auth', [logCotroller::class, 'auth'])->name('auth');
+Route::get('/logout', [logCotroller::class, 'logout'])->name('logout');
 Route::get('/dashboard', [logCotroller::class, 'dashboard'])->name('dashboard');
