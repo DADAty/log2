@@ -14,13 +14,14 @@ use App\Http\Controllers\logCotroller;
 |
 */
 
-Route::get('/', function () {
+Route::get('/u', function () {
     return view('welcome');
 });
 
 
 /**Methode login */
-Route::get('/login', [logCotroller::class, 'login'])->name('login');
+Route::get('/', [logCotroller::class, 'login'])->name('login');
 Route::get('/auth', [logCotroller::class, 'auth'])->name('auth');
 Route::get('/logout', [logCotroller::class, 'logout'])->name('logout');
-Route::get('/dashboard', [logCotroller::class, 'dashboard'])->name('dashboard');
+//middlewere permet si on a pas fait un authentification on aura pas l`acces 
+Route::get('/dashboard', [logCotroller::class, 'dashboard'])->name('dashboard')->middleware('auth');
