@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\logCotroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/**Methode login */
+Route::get('/log', [logCotroller::class, 'log'])->name('login');
+Route::post('/auth', [logCotroller::class, 'auth'])->name('auth');
+Route::get('/logout', [logCotroller::class, 'logout'])->name('auth');
+Route::get('/dashboard', [logCotroller::class, 'dashboard'])->name('dashboard');
