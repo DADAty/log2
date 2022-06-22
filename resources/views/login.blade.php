@@ -11,7 +11,7 @@
     @csrf
     <input type="mail" name="email"></input>
     <input type="password" name="password"></input>
-    <button type="submit">Se connecter</button>
+    <button type="submit">Se deconnecter</button>
 </form>
 </body>
 </html>
